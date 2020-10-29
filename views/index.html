@@ -1,9 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>DELI-VERY</title>
+        <title>Julles burgers</title>
+        <meta charset="utf-8"/>
     </head>
     <body>
-        <h1>Hello World!!!</h1>
+        <main>
+            <h1>Welcome to Julles Burgers</h1>
+            <section>
+                <h2>Select burger</h2>
+                <p>This is where you execute burger selection</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Julles special burger</th>
+                            <th>Julles snitsare</th>
+                            <th>Julles parisare</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="https://sibylla.se/Global/MealImagesMobile/app/skrovmal.png" alt="Span" title="Burger" width="200px"></td>
+                            <td><img src="https://sibylla.se/Global/MealImagesMobile/app/snitsare.png" alt="Span" title="Snitsare" width="200px"></td>
+                            <td><img src="https://sibylla.se/Global/MealImagesMobile/app/Parisare.png" alt="Span" title="Parisare" width="200px"></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>Horse-free</li> 
+                                    <li>Lactose-free</li>
+                                </ul>
+                            </td>
+
+                            <td>
+                                <ul>
+                                    <li>Gluten-free</li>
+                                    <li>Lactose-free</li>
+                                </ul>
+                            </td>
+
+                            <td>
+                                <ul>
+                                    <li>Pig-free</li>
+                                    <li>Gluten-free</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>Customer information</h2>
+                <p>This is where you provide neccessary information</p>
+
+                <h3>Delivery information:</h3>
+                <p>
+                    <label for="fullname">Fullname</label><br>
+                    <input type="text" id="fullname" name="fn" required="required" placeholder="First- and Last name">
+                </p>
+                <p>
+                    <label for="email">E-mail</label><br>
+                    <input type="email" id="email" name="em" required="required" placeholder="E-mail address">
+                </p>
+                <p>
+                    <label for="street">Street</label><br>
+                    <input type="text" id="street" name="st" required="required" placeholder="Street name">
+                </p>
+                <p>
+                    <label for="house">Street</label><br>
+                    <input type="number" id="house" name="ho" required="required" placeholder="House number">
+                </p>
+                <p>
+                    <label for="recipient">Recipient</label><br>
+                    <select id="recipient" name="rcp">
+                        <option>Debit card</option>
+                        <option>Credit card</option>
+                        <option selected>Swish</option>
+                        <option>Klarna</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="gender">Gender</label><br>
+                    <input type="radio" id="Male" name="gender" value="male">
+                    <label for="male">Male</label><br>
+                    <input type="radio" id="Female" name="gender" value="female">
+                    <label for="male">Female</label><br>
+                    <input type="radio" id="Non-binary" name="gender" value="non-binary">
+                    <label for="male">Non-binary</label><br>
+                    <input checked type="radio" id="Undisclosed" name="gender" value="female">
+                    <label for="male">Undisclosed</label><br>
+                </p>
+
+                <button type="submit"><img src="https://hotemoji.com/images/dl/u/biker-emoji-by-google.png" alt="Span" title="Biker" width="20px"> Place my order</button>
+
+            </section>
+
+            <footer>&copy; 2020 Jullemusten LTD</footer>
+        </main>
     </body>
 </html>
