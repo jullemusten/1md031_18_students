@@ -7,52 +7,47 @@
     </head>
     <body>
         <main>
-            <h1>Welcome to Julles Burgers</h1>
-            <section>
+            <header id="welcomeHeader">
+                <img id="imageHeader" src="https://cdnimg.webstaurantstore.com/images/articles/7/lighting-header.jpg" alt="Span" title="Front" width="200px">
+                <h1>Welcome to Julles Burgers</h1>
+            </header>
+            <section id="selectSection">
                 <h2>Select burger</h2>
                 <p>This is where you execute burger selection</p>
                 <table>
-                    <thead>
-                        <tr>
-                            <th>Julles special burger</th>
-                            <th>Julles snitsare</th>
-                            <th>Julles parisare</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><img src="https://sibylla.se/Global/MealImagesMobile/app/skrovmal.png" alt="Span" title="Burger" width="200px"></td>
-                            <td><img src="https://sibylla.se/Global/MealImagesMobile/app/snitsare.png" alt="Span" title="Snitsare" width="200px"></td>
-                            <td><img src="https://sibylla.se/Global/MealImagesMobile/app/Parisare.png" alt="Span" title="Parisare" width="200px"></td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <ul>
-                                    <li>Horse-free</li> 
-                                    <li>Lactose-free</li>
-                                </ul>
-                            </td>
-
-                            <td>
-                                <ul>
-                                    <li>Gluten-free</li>
-                                    <li>Lactose-free</li>
-                                </ul>
-                            </td>
-
-                            <td>
-                                <ul>
-                                    <li>Pig-free</li>
-                                    <li>Gluten-free</li>
-                                </ul>
-                            </td>
-                        </tr>
-                    </tbody>
+                    <div class="wrapper">
+                        <div class="box a">
+                            <h3>Chickenburger</h3>
+                            <img src="https://www.burgerking.se/011_se/Product%20images/Burgers/image-thumb__14591__product_detail/Chicken%20King%201500x1500.png" alt="Span" title="Chickenburger" width="200px">
+                            <ul>
+                                <li>170 kcal</li>
+                                <li>Contains <span class="allergy">gluten</span></li> 
+                                <li>Contains <span class="allergy">lactos</span></li>
+                            </ul>
+                        </div>
+                        <div class="box b">
+                            <h3>Cheesebeanburger</h3>
+                            <img src="https://www.burgerking.se/011_se/Product%20images/Burgers/image-thumb__16402__product_detail/Single_Cheese_Produktbilder-Hemsida.png" alt="Span" title="Cheeseburger" width="200px">
+                            <ul>
+                                <li>130 kcal</li>
+                                <li>Contains beans</li>
+                                <li>Contains <span class="allergy">lactose</span></li>
+                            </ul>
+                        </div>
+                        <div class="box c">
+                            <h3>Truffleburger</h3>
+                            <img src="https://www.burgerking.se/011_se/Product%20images/Burgers/image-thumb__18082__product_detail/BBQ%20CHEESE%20BACON_1500x1500px.png" alt="Span" title="Truffleburger" width="200px">
+                            <ul>
+                                <li>200 kcal</li>
+                                <li>Contains bacon</li>
+                                <li>Contains <span class="allergy">gluten</span></li>
+                            </ul>
+                        </div>
+                    </div>
                 </table>
             </section>
 
-            <section>
+            <section id="customerSection">
                 <h2>Customer information</h2>
                 <p>This is where you provide neccessary information</p>
 
@@ -94,9 +89,9 @@
                     <label for="male">Undisclosed</label><br>
                 </p>
 
-                <button type="submit"><img src="https://hotemoji.com/images/dl/u/biker-emoji-by-google.png" alt="Span" title="Biker" width="20px"> Place my order</button>
-
             </section>
+
+            <button type="submit"><img src="https://hotemoji.com/images/dl/u/biker-emoji-by-google.png" alt="Span" title="Biker" width="20px"> Place my order</button>
         </main>
         <footer>&copy; 2020 Jullemusten LTD</footer>
     </body>

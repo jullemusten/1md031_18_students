@@ -1,3 +1,72 @@
+#welcomeHeader {
+    height: 200px;
+    overflow: hidden;
+}
+
+#imageHeader {
+    opacity: 0.7;
+    width: 100%;
+}
+
 h1 {
-    color: burlywood;
+    color: rgb(58, 47, 47);
+    position: absolute;
+    top: 130px;
+    left: 20px;
+}
+
+body {
+    font-family: arial;
+}
+
+.wrapper {
+    display: grid;
+}
+
+.a {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+}
+
+.b {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+}
+
+.c {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+}
+
+.allergy {
+    font-weight: bold;
+}
+
+#selectSection {
+    background-color: black;
+    color: white;
+    margin: 10px 10px;
+    border: 5px dashed white;
+    padding: 10px;
+}
+
+#customerSection {
+    margin: 10px 10px;
+    border: 5px dashed black;
+    padding: 10px;
+}
+
+button:hover {
+    background-color: yellowgreen;
+    cursor: pointer;
+}
+
+button {
+    margin: 10px 10px;
+}
+
+@media screen and (max-width: 800px) {
+    h1 {
+        font-size: 6vw;
+    }
 }
