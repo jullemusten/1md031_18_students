@@ -5,7 +5,7 @@
         <meta charset="utf-8"/>
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <script src="js/js_script.js" defer></script>
-        <script src="https//veujs.org/js/vue.js"></script>
+        <script src="https://vuejs.org/js/vue.js"></script>
         <script src="js/vue_script.js" defer></script>
     </head>
     <body>
@@ -18,8 +18,20 @@
                 <h2>Select burger</h2>
                 <p>Select your burger</p>
                 <table>
-                    <div class="wrapper">
-                        <div class="box a">
+                    <div class="wrapper" id="menu">
+                        <div v-for="burger in menu">
+                            <h2 id="product">
+                                {{burger.Product}} 
+                            </h2>
+                            <p id="kcal">
+                                {{burger.cal}} 
+                            </p>
+                            <p id="allergy">
+                                {{burger.allergy}}
+                            </p>
+                        </div>
+ 
+                        <!--<div class="box a">
                             <h3>Chicken burger</h3>
                             <img src="https://www.burgerking.se/011_se/Product%20images/Burgers/image-thumb__14591__product_detail/Chicken%20King%201500x1500.png" alt="Span" title="Chickenburger" width="200px">
                             <ul>
@@ -45,7 +57,7 @@
                                 <li>Contains bacon</li>
                                 <li>Contains <span class="allergy">gluten</span></li>
                             </ul>
-                        </div>
+                        </div>-->
                     </div>
                 </table>
             </section>
