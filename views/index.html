@@ -3,13 +3,20 @@
     <head>
         <title>Julles burgers</title>
         <meta charset="utf-8"/>
+        <link rel="stylesheet" href="css/deli-very.css">
+        <script src="/socket.io/socket.io.js" defer></script>
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script type="text/javascript" src="js/menu.js" defer></script>
         <script src="js/js_script.js" defer></script>
         <script src="https://vuejs.org/js/vue.js"></script>
         <script src="js/vue_script.js" defer></script>
+        <!--<link rel="stylesheet" href="css/deli-very.css">
+        <script src="/vue/vue.js" defer></script>
+        <script src="/socket.io/socket.io.js" defer></script>
+        <script src="js/deli-very.js" defer></script>-->
     </head>
     <body>
-        <main>
+        <main id="website">
             <header id="welcomeHeader">
                 <img id="imageHeader" src="https://cdnimg.webstaurantstore.com/images/articles/7/lighting-header.jpg" alt="Span" title="Front" width="200px">
                 <h1>Welcome to Julles Burgers</h1>
@@ -20,16 +27,27 @@
                 <table>
                     <div class="wrapper" id="menu">
                         <div v-for="burger in menu">
-                            <h2 id="product">
-                                {{burger.Product}} 
-                            </h2>
-                            <p id="kcal">
-                                {{burger.cal}} 
-                            </p>
-                            <p id="allergy">
-                                {{burger.allergy}}
-                            </p>
+                            <h3 id="product">
+                                {{burger.name}}
+                            </h3>
+                            <img :src="burger.img" style="width:100%;" alt="">
+                            <div id="kcal">
+                                <li>{{burger.kCal}} kCal</li>
+                            </div>
+                            <div v-if="burger.lactose">
+                                <li>Contains <span class="allergy">lactose</span></li>
+                            </div>
+                            <div v-if="burger.gluten">
+                                <li>Contains <span class="allergy">gluten</span></li>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="checkboxes" name="burgerCheckbox" :value="burger.name">
+                                <label for="checkboxes">I want this burger</label>
+                            </div>
                         </div>
+                        <!--<div class="test" id="checkboxes">
+                            <input type="checkbox" name="box" value=""
+                        </div>-->
  
                         <!--<div class="box a">
                             <h3>Chicken burger</h3>
@@ -75,15 +93,15 @@
                     <label for="email">E-mail</label><br>
                     <input type="email" id="email" name="em" required="required" placeholder="E-mail address">
                 </p>
-                <p>
+                <!--<p>
                     <label for="street">Street</label><br>
                     <input type="text" id="street" name="st" required="required" placeholder="Street name">
                 </p>
                 <p>
-                    <label for="house">Street</label><br>
+                    <label for="house">House number</label><br>
                     <input type="number" id="house" name="ho" required="required" placeholder="House number">
                 </p>
-                <p>
+                <p>-->
                     <label for="recipient">Recipient</label><br>
                     <select id="recipient" name="rcp">
                         <option>Debit card</option>
@@ -92,13 +110,34 @@
                         <option>Klarna</option>
                     </select>
                 </p>
+                <!--<p>Please indicate point of delivery</p>
+                <div class="view-box">
+                    <div id="dots" v-on:click="addOrder">
+                        <div 
+                          v-for="(order, key) in orders"
+                          v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
+                          {{key}}
+                        </div>
+                    </div>
+                  </div>
+                <p>-->
+                <p>Please indicate point of delivery</p>
+                <div class="view-box">
+                    <div id="dots" v-on:click="displayOrder">
+                        <div 
+                          v-bind:style="{ left: coord.x + 'px', top: coord.y + 'px'}">
+                          T
+                        </div>
+                    </div>
+                  </div>
+
                 <p>
                     <label for="gender">Gender</label><br>
                     <input type="radio" id="Male" name="gender" value="male">
                     <label for="male">Male</label><br>
                     <input type="radio" id="Female" name="gender" value="female">
                     <label for="male">Female</label><br>
-                    <input type="radio" id="Non-binary" name="gender" value="non-binary">
+                    <input type="radio" id="Non-Binary" name="gender" value="non-binary">
                     <label for="male">Non-binary</label><br>
                     <input checked type="radio" id="Undisclosed" name="gender" value="female">
                     <label for="male">Undisclosed</label><br>
@@ -106,7 +145,40 @@
 
             </section>
 
-            <button type="submit"><img src="https://hotemoji.com/images/dl/u/biker-emoji-by-google.png" alt="Span" title="Biker" width="20px"> Place my order</button>
+            <!--<button type="submit"><img src="https://hotemoji.com/images/dl/u/biker-emoji-by-google.png" alt="Span" title="Biker" width="20px"> Place my order</button>-->
+            <div>
+                <button v-on:click="orderButton"><img src="https://hotemoji.com/images/dl/u/biker-emoji-by-google.png" alt="Span" title="Biker" width="20px"> Place my order</button>
+            <!--<div class="ordered" id="information">
+                <div v-for="info in information">
+                    <h3 id="Your order">
+                        Your order and information:
+                    </h3>
+                    <div id="name">
+                        <li>Your name: {{info.fullname}}</li>
+                    </div>
+                </div>-->
+            </div>
+            <!--<div id="Order confirmation"> v-if="">
+                 <p>Name: {{infoAboutOrder[0]}}</p>   
+            </div>-->
+
+            <!--<div id=orderConfirmation v-for="information in personalInfoArray">
+                <p>{{information}}</p>
+            </div>-->
+            <div id="orderSection" v-if="show">
+            <p id="orderTitle">Order confirmation</p>
+            <p id="customerTitle">Customer details</p>
+            <p>Name: {{personalInfoArray[0]}}</p>
+            <p>Email: {{personalInfoArray[1]}}</p>
+            <p>Delivery information: {{coord.x}} x / {{coord.y}} y</p>
+            <p>Payment method: {{personalInfoArray[2]}}</p>
+            <p>Gender: {{personalInfoArray[3]}}</p>
+            <p id="theOrder">Your order</p>
+            <div v-for="burgers in burgerOrderArray">
+                <li>{{burgers}}</li>
+            </div>
+            </div>
+
         </main>
         <footer>&copy; 2020 Jullemusten LTD</footer>
     </body>

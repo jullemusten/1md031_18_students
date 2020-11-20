@@ -21,12 +21,17 @@ body {
 
 .wrapper {
     display: grid;
-    grid-template-columns: 250px 250px 250px;/*vill typ anpassa sizen här till hemsidan storlek, men hur?*/
+    grid-template-columns: 1fr 1fr 1fr;/*250px 250px 250pxvill typ anpassa sizen här till hemsidan storlek, men hur?*/
 }
 
+/*.checkBoxForOrders {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}*/
 
 
-.a {
+
+/*.a {
     grid-column: 1;
     grid-row: 1 / span 2;
 }
@@ -39,7 +44,7 @@ body {
 .c {
     grid-column: 3;
     grid-row: 1 / span 2;
-}
+}*/
 
 .allergy {
     font-weight: bold;
@@ -68,7 +73,24 @@ button {
     margin: 10px 10px;
 }
 
-@media screen and (max-width: 800px) {
+#orderSection {
+    margin: 10px 10px;
+}
+
+#orderTitle {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#customerTitle {
+    font-weight: bold;
+}
+
+#theOrder {
+    font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
     h1 {
         font-size: 6vw;
     }

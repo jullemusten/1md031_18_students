@@ -41,3 +41,9 @@ body {
 	background: rgba(255,255,255, 0.5);
 	padding: 1em;
 }
+
+#orderedPersInfo {
+	font-style: italic;
+	font-size: 12px;
+	border-bottom:1px solid #000;
+}
