@@ -21,30 +21,8 @@ body {
 
 .wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;/*250px 250px 250pxvill typ anpassa sizen här till hemsidan storlek, men hur?*/
-}
-
-/*.checkBoxForOrders {
-    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-}*/
-
-
-
-/*.a {
-    grid-column: 1;
-    grid-row: 1 / span 2;
 }
-
-.b {
-    grid-column: 2;
-    grid-row: 1 / span 2;
-}
-
-.c {
-    grid-column: 3;
-    grid-row: 1 / span 2;
-}*/
 
 .allergy {
     font-weight: bold;
